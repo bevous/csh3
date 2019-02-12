@@ -1,0 +1,23 @@
+0 and 25   (0, 0, 255) and (0, 255, 255)
+25 and 50  (0, 255, 255) and (0, 255, 0)
+50 and 75  (0, 255, 0) and (255, 255, 0)
+75 and up  (255, 255, 0) and (255, 0, 0) 
+
+z=(x-a)/(b-a)
+y=dz+c(1-z)
+
+Consider an example of 30 degrees. 30 is in the range of 25 to 50 so you have a low (0,255, 255) and a high of (0 255, 0).
+Remember these colors are in the order (R, G, B). 
+We must calculate our RBG. We start with Red. So, we interpolate. From the range above the Red low = 0 and the Red high = 0. 
+Therefore, z = (30 - 25) / (50 - 25) = 5/25 = .2 and y = (0 * .2 + 0 * (1 - .2) = 0. That means Red = 0. 
+Now we move to Green. Green low = 255, Green high = 255.
+So, z = (30 - 25) / (50 - 25) = .2 and y = (255 * .2 + 255 * (1 - .2) = 51 + 204 = 255. 
+Therefore, green = 255. Lastly, Blue. Blue low = 255, Blue high = 0. z = (30 - 25) / (50 - 25) = .2 and y = (0 * .2 + 255 * (1 - .2)) = 204. 
+So, our color is (0, 255, 204).
+Now we calculate the color number using the formula -65536 × red + 256 × green + blue.
+Given our color of (0, 255, 204) = 0 + 255 * 256 + 204 = 65484.
+Now we calculate the hex. Remember hex is in the form of #RRGGBB so: Red – 0 in hex it is
+00. Green - 255 in hex it is FF. Lastly, Blue – 204 in hex it is CC. Therefore, the hex code is
+#00FFCC
+
+30 degrees
