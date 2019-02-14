@@ -1,6 +1,6 @@
 ﻿namespace colors
 {
-    partial class Form1
+    partial class colorsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.hexValueRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.colorNumberTextBox = new System.Windows.Forms.TextBox();
+            this.tempatureNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.colorNumberLabel = new System.Windows.Forms.Label();
+            this.tempatureLabel = new System.Windows.Forms.Label();
+            this.hextValueLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tempatureNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // hexValueRichTextBox
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(26, 31);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(56, 22);
-            this.numericUpDown1.TabIndex = 0;
+            this.hexValueRichTextBox.Location = new System.Drawing.Point(119, 130);
+            this.hexValueRichTextBox.Name = "hexValueRichTextBox";
+            this.hexValueRichTextBox.Size = new System.Drawing.Size(217, 157);
+            this.hexValueRichTextBox.TabIndex = 0;
+            this.hexValueRichTextBox.Text = "";
             // 
-            // richTextBox1
+            // colorNumberTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(26, 76);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(117, 96);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.colorNumberTextBox.Location = new System.Drawing.Point(119, 66);
+            this.colorNumberTextBox.Name = "colorNumberTextBox";
+            this.colorNumberTextBox.Size = new System.Drawing.Size(91, 22);
+            this.colorNumberTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // tempatureNumericUpDown
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 22);
-            this.textBox1.TabIndex = 2;
+            this.tempatureNumericUpDown.Location = new System.Drawing.Point(216, 67);
+            this.tempatureNumericUpDown.Name = "tempatureNumericUpDown";
+            this.tempatureNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.tempatureNumericUpDown.TabIndex = 2;
+            this.tempatureNumericUpDown.ValueChanged += new System.EventHandler(this.TempatureNumericUpDownValueChanged);
             // 
-            // Form1
+            // colorNumberLabel
+            // 
+            this.colorNumberLabel.AutoSize = true;
+            this.colorNumberLabel.Location = new System.Drawing.Point(116, 46);
+            this.colorNumberLabel.Name = "colorNumberLabel";
+            this.colorNumberLabel.Size = new System.Drawing.Size(91, 17);
+            this.colorNumberLabel.TabIndex = 3;
+            this.colorNumberLabel.Text = "color number";
+            // 
+            // tempatureLabel
+            // 
+            this.tempatureLabel.AutoSize = true;
+            this.tempatureLabel.Location = new System.Drawing.Point(235, 46);
+            this.tempatureLabel.Name = "tempatureLabel";
+            this.tempatureLabel.Size = new System.Drawing.Size(77, 17);
+            this.tempatureLabel.TabIndex = 4;
+            this.tempatureLabel.Text = "Tempature";
+            // 
+            // hextValueLabel
+            // 
+            this.hextValueLabel.AutoSize = true;
+            this.hextValueLabel.Location = new System.Drawing.Point(190, 110);
+            this.hextValueLabel.Name = "hextValueLabel";
+            this.hextValueLabel.Size = new System.Drawing.Size(68, 17);
+            this.hextValueLabel.TabIndex = 5;
+            this.hextValueLabel.Text = "hex value";
+            // 
+            // colorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(178, 209);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.ClientSize = new System.Drawing.Size(449, 310);
+            this.Controls.Add(this.hextValueLabel);
+            this.Controls.Add(this.tempatureLabel);
+            this.Controls.Add(this.colorNumberLabel);
+            this.Controls.Add(this.tempatureNumericUpDown);
+            this.Controls.Add(this.colorNumberTextBox);
+            this.Controls.Add(this.hexValueRichTextBox);
+            this.Name = "colorsForm";
+            this.Text = "colors";
+            ((System.ComponentModel.ISupportInitialize)(this.tempatureNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,9 +108,12 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox hexValueRichTextBox;
+        private System.Windows.Forms.TextBox colorNumberTextBox;
+        private System.Windows.Forms.NumericUpDown tempatureNumericUpDown;
+        private System.Windows.Forms.Label colorNumberLabel;
+        private System.Windows.Forms.Label tempatureLabel;
+        private System.Windows.Forms.Label hextValueLabel;
     }
 }
 

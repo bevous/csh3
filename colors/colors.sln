@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "colors", "colors\colors.csproj", "{E80F3A67-685E-40A1-BA0F-DDA596BA30A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "colors", "colors\colors.csproj", "{76DA4B69-FC8C-40C7-A473-7C6C1A4084E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E80F3A67-685E-40A1-BA0F-DDA596BA30A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E80F3A67-685E-40A1-BA0F-DDA596BA30A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E80F3A67-685E-40A1-BA0F-DDA596BA30A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E80F3A67-685E-40A1-BA0F-DDA596BA30A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76DA4B69-FC8C-40C7-A473-7C6C1A4084E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76DA4B69-FC8C-40C7-A473-7C6C1A4084E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76DA4B69-FC8C-40C7-A473-7C6C1A4084E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76DA4B69-FC8C-40C7-A473-7C6C1A4084E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3FE5C645-967D-4C1F-82C9-271E6F0A5A0C}
+		SolutionGuid = {ECBC790C-D239-49B9-A587-413DEC478553}
 	EndGlobalSection
 EndGlobal
