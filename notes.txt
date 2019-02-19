@@ -3,8 +3,35 @@
 50 and 75  (0, 255, 0) and (255, 255, 0)
 75 and up  (255, 255, 0) and (255, 0, 0) 
 
+
+color = d(z=(x-a)/(b-a))+c(1-(z=(x-a)/(b-a)))
+
 z=(x-a)/(b-a)
+x= tempature
+a= the lower end of the tempature range 
+b= the upper end of the tempature
+
 y=dz+c(1-z)
+d= color lowest value
+z= the calculated value from the previous formula
+c= color highest value
+z= the calculated value from the previous formula
+
+
+Red low = 0 and the Red high = 0.
+z = (30 - 25) / (50 - 25) = .2
+y = (0 * .2 + 0 * (1 - .2) = 0. That means Red = 0.
+
+Green low = 255, Green high = 255.
+z = (30 - 25) / (50 - 25) = .2
+y = (255 * .2 + 255 * (1 - .2) = 51 + 204 = 255. Therefore, green = 255.
+
+Blue low = 255, Blue high = 0.
+z = (30 - 25) / (50 - 25) = .2
+y = (0 * .2 + 255 * (1 - .2)) = 204. 
+
+So, our color is (0, 255, 204).
+
 
 Consider an example of 30 degrees. 30 is in the range of 25 to 50 so you have a low (0,255, 255) and a high of (0 255, 0).
 Remember these colors are in the order (R, G, B). 
