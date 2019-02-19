@@ -103,11 +103,9 @@
                 z = (double)(temperature - firstRangeLow) / (firstRangeHigh - firstRangeLow);
                 var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
 
-                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+                newTemperatureColor = Color.FromArgb(tempRed, tempGreen, tempBlue);
 
-                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
-                                                + Environment.NewLine + $"blue: {tempBlue:G}";
-
+               
                 var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
                 return colorNumber;
             }
@@ -134,11 +132,9 @@
                 z = (double)(temperature - secondRangeLow) / (secondRangeHigh - secondRangeLow);
                 var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
 
-                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+                newTemperatureColor = Color.FromArgb(tempRed, tempGreen, tempBlue);
 
-                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
-                                                + Environment.NewLine + $"blue: {tempBlue:G}";
-
+                
                 var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
                 return colorNumber;
             }
@@ -165,11 +161,9 @@
                 z = (double)(temperature - thirdRangeLow) / (thirdRangeHigh - thirdRangeLow);
                 var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
 
-                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+                newTemperatureColor = Color.FromArgb(tempRed, tempGreen, tempBlue);
 
-                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
-                                                + Environment.NewLine + $"blue: {tempBlue:G}";
-
+               
                 var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
                 return colorNumber;
             }
@@ -196,11 +190,9 @@
                 z = (double)(temperature - fourthRangeLow) / (fourthRangeHigh - fourthRangeLow);
                 var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
 
-                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+                newTemperatureColor = Color.FromArgb(tempRed, tempGreen, tempBlue);
 
-                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
-                                                + Environment.NewLine + $"blue: {tempBlue:G}";
-
+                
                 var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
                 return colorNumber;
             }
@@ -235,6 +227,7 @@
                 var newFormColorNumber = this.CalculateColor(temperature, out var newFormColor);
                 this.colorNumberTextBox.Text = newFormColorNumber.ToString();
                 this.BackColor = newFormColor;
+                this.hexValueRichTextBox.Text = $"#{newFormColor.R:X2}{newFormColor.G:X2}{newFormColor.B:X2} {Environment.NewLine}{newFormColor}";
             }
             else
             {
