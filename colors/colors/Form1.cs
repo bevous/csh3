@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace colors
+﻿namespace colors
 {
-    using System.Diagnostics.CodeAnalysis;
-    
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
 
     /// <summary>
     /// The colors form.
@@ -34,8 +25,8 @@ namespace colors
         private const int firstRangeHigh = 25;  // (0, 0, 255) and (0, 255, 255)
 
         
-        private Color firstLowestColor = Color.FromArgb(highestValue, lowestValue, lowestValue, highestValue);;
-        private Color firstHighestColor = Color.FromArgb(highestValue, lowestValue, highestValue, highestValue);;
+        private Color firstLowestColor = Color.FromArgb(highestValue, lowestValue, lowestValue, highestValue);
+        private Color firstHighestColor = Color.FromArgb(highestValue, lowestValue, highestValue, highestValue);
 
         #endregion
 
@@ -76,19 +67,21 @@ namespace colors
 
         #endregion
 
-        
+        /// <summary>
+        /// The default temp.
+        /// </summary>
+        private const int DefaultTemp = 70;
+
 
         /// <summary>
-        /// The calculate color.
+        /// The calculate colors RGB values and the colors number.
         /// </summary>
         /// <returns>
         /// The <see cref="int"/>.
         /// </returns>
-        private int CalculateColor(int tempature,out Color newTempatureColor)
+        private int CalculateColor(int temperature, out Color newTemperatureColor)
         {
-            
-            var tempColor =new Color();
-            if (tempature >= firstRangeLow && tempature < firstRangeHigh)
+            if (temperature >= firstRangeLow && temperature < firstRangeHigh)
             {
                 int highRed = this.firstHighestColor.R;
                 int highGreen = this.firstHighestColor.G;
@@ -98,34 +91,124 @@ namespace colors
                 int lowGreen = this.firstLowestColor.G;
                 int lowBlue = this.firstLowestColor.B;
 
-                //red
-                var z = ((tempature - firstRangeLow) / (firstRangeHigh - firstRangeLow));
-                var tempRed = lowRed * z + highRed * (1 - z);
-                //green
-                z = ((tempature - firstRangeLow) / (firstRangeHigh - firstRangeLow));
-                var tempGreen = lowGreen * z + highGreen * (1 - z);
-                //blue
-                z = ((tempature - firstRangeLow) / (firstRangeHigh - firstRangeLow));
-                var tempBlue = lowBlue * z + highBlue * (1 - z);
-            }
-            else if (tempature >= secondRangeLow && tempature < secondRangeHigh)
-            {
-            }
-            else if (tempature >= thirdRangeLow && tempature < thirdRangeHigh)
-            {
-            }
-            else if (tempature >= fourthRangeLow && tempature < fourthRangeHigh)
-            {
+                // red
+                var z = (double)((temperature - firstRangeLow) / (firstRangeHigh - firstRangeLow));
+                var tempRed = (int)Math.Floor(highRed * z + lowRed * (1 - z));
+
+                // green
+                z = (double)(temperature - firstRangeLow) / (firstRangeHigh - firstRangeLow);
+                var tempGreen = (int)Math.Floor(highGreen * z + lowGreen * (1 - z));
+
+                // blue
+                z = (double)(temperature - firstRangeLow) / (firstRangeHigh - firstRangeLow);
+                var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
+
+                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+
+                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
+                                                + Environment.NewLine + $"blue: {tempBlue:G}";
+
+                var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
+                return colorNumber;
             }
 
-            // else, tempature is out of range doNothing();
+            if (temperature >= secondRangeLow && temperature < secondRangeHigh)
+            {
+                int highRed = this.secondHighestColor.R;
+                int highGreen = this.secondHighestColor.G;
+                int highBlue = this.secondHighestColor.B;
+
+                int lowRed = this.secondLowestColor.R;
+                int lowGreen = this.secondLowestColor.G;
+                int lowBlue = this.secondLowestColor.B;
+
+                // red
+                var z = (double)((temperature - secondRangeLow) / (secondRangeHigh - secondRangeLow));
+                var tempRed = (int)Math.Floor(highRed * z + lowRed * (1 - z));
+
+                // green
+                z = (double)(temperature - secondRangeLow) / (secondRangeHigh - secondRangeLow);
+                var tempGreen = (int)Math.Floor(highGreen * z + lowGreen * (1 - z));
+
+                // blue
+                z = (double)(temperature - secondRangeLow) / (secondRangeHigh - secondRangeLow);
+                var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
+
+                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+
+                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
+                                                + Environment.NewLine + $"blue: {tempBlue:G}";
+
+                var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
+                return colorNumber;
+            }
+
+            if (temperature >= thirdRangeLow && temperature < thirdRangeHigh)
+            {
+                int highRed = this.thirdHighestColor.R;
+                int highGreen = this.thirdHighestColor.G;
+                int highBlue = this.thirdHighestColor.B;
+
+                int lowRed = this.thirdLowestColor.R;
+                int lowGreen = this.thirdLowestColor.G;
+                int lowBlue = this.thirdLowestColor.B;
+
+                // red
+                var z = (double)(temperature - thirdRangeLow) / (thirdRangeHigh - thirdRangeLow);
+                var tempRed = (int)Math.Floor(highRed * z + lowRed * (1 - z));
+
+                // green
+                z = (double)(temperature - thirdRangeLow) / (thirdRangeHigh - thirdRangeLow);
+                var tempGreen = (int)Math.Floor(highGreen * z + lowGreen * (1 - z));
+
+                // blue
+                z = (double)(temperature - thirdRangeLow) / (thirdRangeHigh - thirdRangeLow);
+                var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
+
+                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+
+                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
+                                                + Environment.NewLine + $"blue: {tempBlue:G}";
+
+                var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
+                return colorNumber;
+            }
+
+            if (temperature >= fourthRangeLow && temperature <= fourthRangeHigh)
+            {
+                int highRed = this.fourthHighestColor.R;
+                int highGreen = this.fourthHighestColor.G;
+                int highBlue = this.fourthHighestColor.B;
+
+                int lowRed = this.fourthLowestColor.R;
+                int lowGreen = this.fourthLowestColor.G;
+                int lowBlue = this.fourthLowestColor.B;
+
+                // red
+                var z = (double)(temperature - fourthRangeLow) / (fourthRangeHigh - fourthRangeLow);
+                var tempRed = (int)Math.Floor(highRed * z + lowRed * (1 - z));
+
+                // green
+                z = (double)(temperature - fourthRangeLow) / (fourthRangeHigh - fourthRangeLow);
+                var tempGreen = (int)Math.Floor(highGreen * z + lowGreen * (1 - z));
+
+                // blue
+                z = (double)(temperature - fourthRangeLow) / (fourthRangeHigh - fourthRangeLow);
+                var tempBlue = (int)Math.Floor(highBlue * z + lowBlue * (1 - z));
+
+                newTemperatureColor = Color.FromArgb(highestValue, tempRed, tempGreen, tempBlue);
+
+                this.hexValueRichTextBox.Text = $"red: {tempRed:G}" + Environment.NewLine + $"green: {tempGreen:G}"
+                                                + Environment.NewLine + $"blue: {tempBlue:G}";
+
+                var colorNumber = -65536 * tempRed + 256 * tempGreen + tempBlue;
+                return colorNumber;
+            }
+
+            // else, temperature is out of range doNothing();
+            newTemperatureColor = Color.White;
             return 1;
         }
-
-        /// <summary>
-        /// The default temp.
-        /// </summary>
-        private const int DefaultTemp = 70;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="colorsForm"/> class.
@@ -136,7 +219,7 @@ namespace colors
         }
 
         /// <summary>
-        /// The tempature numeric up down_ value changed.
+        /// The temperature numeric up down_ value changed.
         /// </summary>
         /// <param name="sender">
         /// The sender.
@@ -144,30 +227,19 @@ namespace colors
         /// <param name="e">
         /// The e.
         /// </param>
-        private void TempatureNumericUpDownValueChanged(object sender, EventArgs e)
+        private void TemperatureNumericUpDownValueChanged(object sender, EventArgs e)
         {
             int.TryParse(this.tempatureNumericUpDown.Text, out var temperature);
-            if (temperature >= 0 && temperature < 25)
+            if (temperature >= 0 && temperature <= 100)
             {
-
-            }
-            else if (temperature >= 25 && temperature < 50)
-            {
-
-            }
-            else if (temperature >= 50 && temperature < 75)
-            {
-
+                var newFormColorNumber = this.CalculateColor(temperature, out var newFormColor);
+                this.colorNumberTextBox.Text = newFormColorNumber.ToString();
+                this.BackColor = newFormColor;
             }
             else
             {
-                if (temperature < 0 || temperature > 100)
-                {
-                    this.tempatureNumericUpDown.Text = DefaultTemp.ToString();
-                }
- // else no action needed DoNothing();
+                this.tempatureNumericUpDown.Text = DefaultTemp.ToString();
             }
-            
         }
     }
 }

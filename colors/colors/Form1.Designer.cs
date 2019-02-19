@@ -58,7 +58,7 @@
             this.tempatureNumericUpDown.Name = "tempatureNumericUpDown";
             this.tempatureNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.tempatureNumericUpDown.TabIndex = 2;
-            this.tempatureNumericUpDown.ValueChanged += new System.EventHandler(this.TempatureNumericUpDownValueChanged);
+            this.tempatureNumericUpDown.ValueChanged += new System.EventHandler(this.TemperatureNumericUpDownValueChanged);
             // 
             // colorNumberLabel
             // 
