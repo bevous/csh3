@@ -1,6 +1,6 @@
 ﻿namespace colors
 {
-    partial class colorsForm
+    partial class ColorsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             this.Controls.Add(this.tempatureNumericUpDown);
             this.Controls.Add(this.colorNumberTextBox);
             this.Controls.Add(this.hexValueRichTextBox);
-            this.Name = "colorsForm";
+            this.Name = "ColorsForm";
             this.Text = "colors";
             ((System.ComponentModel.ISupportInitialize)(this.tempatureNumericUpDown)).EndInit();
             this.ResumeLayout(false);
