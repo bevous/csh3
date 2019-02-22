@@ -1,0 +1,8 @@
+20 is in the range of 0 to 25 so you have a low (0,0,255) and a high of (0,255,255).
+z = (20 - 0) / (25 - 0) = 0.8 and y = (0 * 0.8 + 0 * (1 - 0.8) = 0.That means Red = 0
+z = (20 - 0) / (25 - 0) = 0.8 and y = (255 * 0.8 + 0 * (1 - 0.8)= 204.Therefore, green = 204.
+z = (20 - 0) / (25 - 0) = 0.8 and y = (255 * 0.8 + 255 * (1 - 0.8)= 255.Therefore, blue = 255.
+Now we calculate the color number using the formula -65536 × 0 + 256 × 204 + 255= 52479.
+0 is 00, 204 is CC, 255 is FF 
+#00CCFF
+

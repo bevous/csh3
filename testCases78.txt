@@ -1,0 +1,8 @@
+78 is in the range of 75 to 100 so you have a low (255,255,0) and a high of (255,0,0).
+z = (78 - 75) / (100 - 75) = 0.12 and y = (255 * 0.12 + 255 * (1 - 0.12) = 255.That means Red = 255
+z = (78 - 75) / (100 - 75) = 0.12 and y = (0 * 0.12 + 255 * (1 - 0.12)= 224.Therefore, green = 224.
+z = (78 - 75) / (100 - 75) = 0.12 and y = (0 * 0.12 + 0 * (1 - 0.12)= 0.Therefore, blue = 0.
+Now we calculate the color number using the formula -65536 × 255 + 256 × 224 + 0= -16654336.
+255 is FF, 224 is E0, 0 is 00 
+#FFE000
+

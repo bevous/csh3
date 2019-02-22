@@ -1,0 +1,8 @@
+30 is in the range of 25 to 50 so you have a low (0,255,255) and a high of (0,255,0).
+z = (30 - 25) / (50 - 25) = 0.2 and y = (0 * 0.2 + 0 * (1 - 0.2) = 0.That means Red = 0
+z = (30 - 25) / (50 - 25) = 0.2 and y = (255 * 0.2 + 255 * (1 - 0.2)= 255.Therefore, green = 255.
+z = (30 - 25) / (50 - 25) = 0.2 and y = (0 * 0.2 + 255 * (1 - 0.2)= 204.Therefore, blue = 204.
+Now we calculate the color number using the formula -65536 × 0 + 256 × 255 + 204= 65484.
+0 is 00, 255 is FF, 204 is CC 
+#00FFCC
+

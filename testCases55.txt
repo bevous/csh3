@@ -1,0 +1,8 @@
+55 is in the range of 50 to 75 so you have a low (0,255,0) and a high of (255,255,0).
+z = (55 - 50) / (75 - 50) = 0.2 and y = (255 * 0.2 + 0 * (1 - 0.2) = 51.That means Red = 51
+z = (55 - 50) / (75 - 50) = 0.2 and y = (255 * 0.2 + 255 * (1 - 0.2)= 255.Therefore, green = 255.
+z = (55 - 50) / (75 - 50) = 0.2 and y = (0 * 0.2 + 0 * (1 - 0.2)= 0.Therefore, blue = 0.
+Now we calculate the color number using the formula -65536 × 51 + 256 × 255 + 0= -3277056.
+51 is 33, 255 is FF, 0 is 00 
+#33FF00
+
